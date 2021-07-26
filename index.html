@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
+    <title>Porting Check</title>
+</head>
+
+<body>
+    <h1>Porting Check</h1>
+    <p>Not all phone numbers can be ported. This tool will check if a number can (likely) be ported over.</p>
+    <br>
+    <div id="tool">
+        <input id="number_input" placeholder="US Numbers Only">
+        <button id="enter_button" onclick="checkNumber()">Submit</button>
+    </div>
+
+    <div id="results">
+        <p><strong>Number: </strong></p>
+        <p id="number_answer"></p>
+        <p><strong>Portable: </strong> </p>
+        <p id="portable_answer"></p>
+    </div>
+</body>
+
+</html>
