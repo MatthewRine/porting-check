@@ -24,7 +24,7 @@ function checkNumber() {
 
     if (foundMatch == false) {
         document.getElementById("number_answer").innerHTML = phoneNumber;
-        document.getElementById("portable_answer").innerHTML = "Cannont Port";
+        document.getElementById("portable_answer").innerHTML = "Cannot Port";
     } else {
         document.getElementById("number_answer").innerHTML = phoneNumber;
         document.getElementById("portable_answer").innerHTML = "Can Likely Port";
