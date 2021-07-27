@@ -1,35 +1,41 @@
 function checkNumber() {
 
 
-
+    var errorMessage = document.getElementById("error_message");
+    errorMessage.innerHTML = "";
+    document.getElementById("portable_answer").innerHTML = "";
+    document.getElementById("number_answer").innerHTML = "";
     var phoneNumber = document.getElementById("number_input").value;
     var foundMatch = false;
 
     phoneNumber = phoneNumber.replace(/\D/g, '');
 
-    if (phoneNumber.length == 11) {
+    if (phoneNumber.length == 11 && phoneNumber.substring(0, 1) == "1") {
         phoneNumber = phoneNumber.substring(1)
     }
 
     var firstSix = phoneNumber.substring(0, 6);
 
-    console.log("Number found: " + phoneNumber);
-    console.log("First Six: " + firstSix);
-
-    var i = 0
-    while (foundMatch == false && i < list.length) {
-        if (list[i] == firstSix) {
-            foundMatch = true;
-        }
-        i++;
-    }
-
-    if (foundMatch == false) {
-        document.getElementById("number_answer").innerHTML = phoneNumber;
-        document.getElementById("portable_answer").innerHTML = "Cannot Port";
+    if (phoneNumber.length < 9 || phoneNumber.length > 10) {
+        errorMessage.innerHTML = "Error: Please enter valid 10 digit US phone number.";
+        console.error("Invalid Number: " + phoneNumber);
     } else {
-        document.getElementById("number_answer").innerHTML = phoneNumber;
-        document.getElementById("portable_answer").innerHTML = "Can Likely Port";
+
+        var i = 0
+        while (foundMatch == false && i < list.length) {
+            if (list[i] == firstSix) {
+                foundMatch = true;
+            }
+            i++;
+        }
+
+        if (foundMatch == false) {
+            document.getElementById("number_answer").innerHTML = phoneNumber;
+            document.getElementById("portable_answer").innerHTML = "Cannot Port";
+        } else {
+            document.getElementById("number_answer").innerHTML = phoneNumber;
+            document.getElementById("portable_answer").innerHTML = "Can Likely Port";
+        }
     }
 
 }

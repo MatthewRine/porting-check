@@ -16,3 +16,9 @@ input{
 button{
     padding: 5px;
 }
+
+#error_message{
+    color: red;
+    font-size: smaller;
+    padding-top: 5px;
+}
